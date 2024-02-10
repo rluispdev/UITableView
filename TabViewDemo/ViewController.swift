@@ -16,11 +16,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
     }
-
-
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        <#code#>
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return strings.count
     }
