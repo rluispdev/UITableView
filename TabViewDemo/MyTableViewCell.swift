@@ -9,6 +9,9 @@ import UIKit
 
 class MyTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var customLabel: UILabel!
+    @IBOutlet weak var customImagemView: UIImageView!
+    
     static let identifier = "MyTableViewCell"
     
     static func nib() -> UINib {
@@ -25,5 +28,4 @@ class MyTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
 }
