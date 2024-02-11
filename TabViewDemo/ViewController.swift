@@ -28,6 +28,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let vc = storyboard.instantiateViewController(withIdentifier: "testVC")
         
         vc.navigationItem.title = strings[indexPath.row]
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
