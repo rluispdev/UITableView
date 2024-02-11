@@ -8,6 +8,8 @@
 import UIKit
 
 class MyTableViewCell: UITableViewCell {
+    
+    static let identifier = "MyTableViewCell"
 
     override func awakeFromNib() {
         super.awakeFromNib()
