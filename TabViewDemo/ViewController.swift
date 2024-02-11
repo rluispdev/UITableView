@@ -16,6 +16,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        
+        tableView.register(MyTableViewCell.nib(), forCellReuseIdentifier: MyTableViewCell.identifier)
+    
     }
 }
 
@@ -37,10 +40,12 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = strings[indexPath.row]
-        cell.selectionStyle = .none
+        let cell = tableView.dequeueReusableCell(withIdentifier: MyTableViewCell.identifier, for: indexPath)
+        as!MyTableViewCell
         
+        cell.customImagemView.image = UIImage(systemName: "square.fill")
+        cell.customLabel.text = strings[indexPath.row]
+
         return cell
     }
 }
