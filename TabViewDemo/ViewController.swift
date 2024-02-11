@@ -44,6 +44,18 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         as!MyTableViewCell
         
         cell.customImagemView.image = UIImage(systemName: "square.fill")
+        
+        switch indexPath.row {
+        case 0:
+            cell.customImagemView.tintColor = .cyan
+         case 1:
+            cell.customImagemView.tintColor = .orange
+        case 2:
+            cell.customImagemView.tintColor = .black
+        default:
+            cell.customImagemView.tintColor = .magenta
+      }
+        
         cell.customLabel.text = strings[indexPath.row]
 
         return cell
